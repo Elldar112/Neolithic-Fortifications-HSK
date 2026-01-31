@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Defs>
+
+	<!-- Base -->
+	<ThingDef Name="FT_Palisade_Base" Abstract="True">
+		<category>Building</category>
+		<thingClass>Building</thingClass>
+		<soundImpactDefault>BulletImpact_Wood</soundImpactDefault>
+		<selectable>true</selectable>
+		<drawerType>MapMeshAndRealTime</drawerType>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<blockWind>false</blockWind>
+		<neverMultiSelect>true</neverMultiSelect>
+		<holdsRoof>false</holdsRoof>
+		<castEdgeShadows>false</castEdgeShadows>
+		<building>
+			<allowAutoroof>false</allowAutoroof>
+			<isInert>true</isInert>
+			<ai_chillDestination>false</ai_chillDestination>
+		</building>
+		<blockLight>false</blockLight>
+		<repairEffect>Repair</repairEffect>
+		<leaveResourcesWhenKilled>true</leaveResourcesWhenKilled>
+		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<designationCategory>Structure</designationCategory>
+	</ThingDef>
+
+	<!-- Palisade -->
+	<ThingDef ParentName="FT_Palisade_Base">
+		<defName>FT_Palisade</defName>
+		<label>palisade wall</label>
+		<thingClass>Building</thingClass>
+		<description>A simple fortification wall for low-tech settlements. Takes longer to build than other walls, but is more durable.</description>
+		<soundImpactDefault>MeleeHit_Wood</soundImpactDefault>
+		<graphicData>
+			<texPath>FT_Palisade</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Asymmetric</linkType>
+			<linkFlags>
+				<li>Fences</li>
+			</linkFlags>
+			<asymmetricLink>
+				<linkFlags>
+					<li>Wall</li>
+					<li>Rock</li>
+				</linkFlags>
+				<linkToDoors>true</linkToDoors>
+				<drawDoorBorderEast>
+					<color>(0,0,0)</color>
+					<size>(0.04, 0.77)</size>
+					<offset>(0.5, 0, -0.08)</offset>
+				</drawDoorBorderEast>
+				<drawDoorBorderWest>
+					<color>(0,0,0)</color>
+					<size>(0.04, 0.77)</size>
+					<offset>(-0.5, 0, -0.08)</offset>
+				</drawDoorBorderWest>
+			</asymmetricLink>
+			<shadowData>
+				<volume>(0.5,1,1)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>FT_Palisade_Icon</uiIconPath>
+		<building>
+			<blueprintGraphicData>
+				<texPath>FT_PalisadeBlueprint</texPath>
+			</blueprintGraphicData>
+			<relatedBuildCommands>
+				<li>FT_Palisade_Embrasures</li>
+				<li>FT_Palisade_Corner</li>
+			</relatedBuildCommands>
+		</building>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+			<Flammability>0.6</Flammability>
+			<Beauty>-5</Beauty>
+		</statBases>
+		<costStuffCount>8</costStuffCount>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<fillPercent>1</fillPercent>
+		<coversFloor>false</coversFloor>
+		<castEdgeShadows>false</castEdgeShadows>
+		<drawStyleCategory>Walls</drawStyleCategory>
+		<tickerType>Never</tickerType>
+		<rotatable>false</rotatable>
+		<repairEffect>ConstructWood</repairEffect>
+	</ThingDef>
+
+	<ThingDef ParentName="DoorBase" Name="FT_PalisadeDoor">
+		<defName>FT_PalisadeDoor</defName>
+		<label>palisade door</label>
+		<description>A fortified external door designed to accompany palisade walls. More durable than standard doors, but takes more time to build.</description>
+		<statBases>
+			<MaxHitPoints>400</MaxHitPoints>
+			<WorkToBuild>1200</WorkToBuild>
+			<Flammability>0.6</Flammability>
+			<Beauty>-6</Beauty>
+		</statBases>
+		<graphicData>
+			<texPath>FT_PalisadeDoor_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<drawSize>1.1</drawSize>
+			<damageData>
+				<rect>(0,0.12,1,0.76)</rect>
+				<enabled>false</enabled>
+			</damageData>
+			<shadowData>
+				<volume>(1,1,1)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+		</graphicData>
+		<stuffCategories>
+			<li>Woody</li>
+		</stuffCategories>
+		<uiIconPath>FT_PalisadeDoor_Icon</uiIconPath>
+		<costStuffCount>30</costStuffCount>
+		<staticSunShadowHeight>0</staticSunShadowHeight>
+	</ThingDef>
+
+	<ThingDef ParentName="FT_Palisade_Base">
+		<defName>FT_Palisade_Corner</defName>
+		<label>palisade corner</label>
+		<thingClass>Building</thingClass>
+		<description>A simple corner fortification for low-tech settlements. Takes longer to build than other walls, but is more durable.</description>
+		<soundImpactDefault>MeleeHit_Wood</soundImpactDefault>
+		<graphicData>
+			<texPath>FT_PalisadeCorner</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Asymmetric</linkType>
+			<linkFlags>
+				<li>Fences</li>
+			</linkFlags>
+			<asymmetricLink>
+				<linkFlags>
+					<li>Wall</li>
+					<li>Rock</li>
+				</linkFlags>
+				<linkToDoors>true</linkToDoors>
+				<drawDoorBorderEast>
+					<color>(0,0,0)</color>
+					<size>(0.04, 0.77)</size>
+					<offset>(0.5, 0, -0.08)</offset>
+				</drawDoorBorderEast>
+				<drawDoorBorderWest>
+					<color>(0,0,0)</color>
+					<size>(0.04, 0.77)</size>
+					<offset>(-0.5, 0, -0.08)</offset>
+				</drawDoorBorderWest>
+			</asymmetricLink>
+			<shadowData>
+				<volume>(0.5,1,1)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>FT_PalisadeCorner_Icon</uiIconPath>
+		<building>
+			<blueprintGraphicData>
+				<texPath>FT_PalisadeCorner_Blueprint</texPath>
+			</blueprintGraphicData>
+			<relatedBuildCommands>
+				<li>FT_Palisade</li>
+				<li>FT_Palisade_Embrasures</li>
+			</relatedBuildCommands>
+		</building>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+			<Flammability>0.6</Flammability>
+			<Beauty>-5</Beauty>
+		</statBases>
+		<costStuffCount>8</costStuffCount>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability Inherit="False">Impassable</passability>
+		<fillPercent>1</fillPercent>
+		<coversFloor>false</coversFloor>
+		<drawStyleCategory>Walls</drawStyleCategory>
+		<tickerType>Never</tickerType>
+		<rotatable>false</rotatable>
+		<repairEffect>ConstructWood</repairEffect>
+	</ThingDef>
+
+	<ThingDef ParentName="FT_Palisade_Base">
+		<defName>FT_Palisade_Embrasures</defName>
+		<label>palisade embrasure</label>
+		<thingClass>Building</thingClass>
+		<description>A defensive installation for low-tech palisade walls. Leaves a space open for ranged weapons to fire while maintaining a good amount of durability.</description>
+		<soundImpactDefault>MeleeHit_Wood</soundImpactDefault>
+		<disableImpassableShotOverConfigError>true</disableImpassableShotOverConfigError>
+		<graphicData>
+			<texPath>FT_Palisade_Embrasures</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Asymmetric</linkType>
+			<linkFlags>
+				<li>Fences</li>
+			</linkFlags>
+			<asymmetricLink>
+				<linkFlags>
+					<li>Wall</li>
+					<li>Rock</li>
+				</linkFlags>
+				<linkToDoors>true</linkToDoors>
+				<drawDoorBorderEast>
+					<color>(0,0,0)</color>
+					<size>(0.04, 0.77)</size>
+					<offset>(0.5, 0, -0.08)</offset>
+				</drawDoorBorderEast>
+				<drawDoorBorderWest>
+					<color>(0,0,0)</color>
+					<size>(0.04, 0.77)</size>
+					<offset>(-0.5, 0, -0.08)</offset>
+				</drawDoorBorderWest>
+			</asymmetricLink>
+			<shadowData>
+				<volume>(0.5,1,1)</volume>
+				<offset>(0,0,-0.25)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>FT_Palisade_Embrasures_Icon</uiIconPath>
+		<building>
+			<blueprintGraphicData>
+				<texPath>FT_Palisade_Embrasures_Blueprint</texPath>
+			</blueprintGraphicData>
+			<relatedBuildCommands>
+				<li>FT_Palisade</li>
+				<li>FT_Palisade_Corner</li>
+			</relatedBuildCommands>
+		</building>
+		<statBases>
+			<MaxHitPoints>500</MaxHitPoints>
+			<WorkToBuild>800</WorkToBuild>
+			<Flammability>0.6</Flammability>
+			<Beauty>-5</Beauty>
+		</statBases>
+		<costStuffCount>8</costStuffCount>
+		<altitudeLayer>Building</altitudeLayer>
+		<passability>Impassable</passability>
+		<fillPercent>0.65</fillPercent>
+		<coversFloor>false</coversFloor>
+		<drawStyleCategory>Walls</drawStyleCategory>
+		<tickerType>Never</tickerType>
+		<rotatable>false</rotatable>
+		<repairEffect>ConstructWood</repairEffect>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>FT_CavalrySpike</defName>
+		<label>cavalry spikes</label>
+		<description>A spiked barricade that slows down and injures people attempting to cross it.</description>
+		<thingClass>Building_TrapDamager</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>FT_Cavalry_Spike</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom4</li>
+			</linkFlags>
+		</graphicData>
+		<costList>
+			<WoodLog>6</WoodLog>
+		</costList>
+		<blockLight>false</blockLight>
+		<uiIconPath>FT_Cavalry_Spike_Icon</uiIconPath>
+		<altitudeLayer>Building</altitudeLayer>
+		<pathCost>150</pathCost>
+		<passability>PassThroughOnly</passability>
+		<fillPercent>0.30</fillPercent>
+		<coversFloor>false</coversFloor>
+		<holdsRoof>false</holdsRoof>
+		<castEdgeShadows>false</castEdgeShadows>
+		<tickerType>Normal</tickerType>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<TrapMeleeDamage>10</TrapMeleeDamage>
+			<TrapSpringChance>0.8</TrapSpringChance>
+			<MaxHitPoints>100</MaxHitPoints>
+			<Beauty>-10</Beauty>
+			<WorkToBuild>75</WorkToBuild>
+			<Flammability>0.8</Flammability>
+		</statBases>
+		<pathCostIgnoreRepeat>false</pathCostIgnoreRepeat>
+		<building>
+			<allowAutoroof>false</allowAutoroof>
+            <expandHomeArea>false</expandHomeArea>
+            <isTrap>true</isTrap>
+            <trapDestroyOnSpring>false</trapDestroyOnSpring>
+            <trapDamageCategory>Sharp</trapDamageCategory>
+			<blueprintGraphicData>
+				<texPath>FT_Cavalry_Spike_Blueprint</texPath>
+			</blueprintGraphicData>
+		</building>
+		<drawStyleCategory>Walls</drawStyleCategory>
+		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<terrainAffordanceNeeded>Light</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<staticSunShadowHeight>0.2</staticSunShadowHeight>
+		<repairEffect>ConstructWood</repairEffect>
+	</ThingDef>
+
+	<ThingDef ParentName="BuildingBase">
+		<defName>FT_Ditch</defName>
+		<label>ditch</label>
+		<description>A basic, unreinforced ditch that obstructs movement. Requires only labour to construct, but can be collapsed by damage.</description>
+		<thingClass>Building</thingClass>
+		<category>Building</category>
+		<graphicData>
+			<texPath>FT_Ditch</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<linkType>Basic</linkType>
+			<linkFlags>
+				<li>Custom5</li>
+			</linkFlags>
+		</graphicData>
+		<damageMultipliers>
+			<li>
+				<damageDef>Bomb</damageDef>
+				<multiplier>10</multiplier>
+			</li>
+		</damageMultipliers>
+		<blockLight>false</blockLight>
+		<uiIconPath>FT_Ditch_Icon</uiIconPath>
+		<altitudeLayer>FloorEmplacement</altitudeLayer>
+		<pathCost>300</pathCost>
+		<passability>Standable</passability>
+		<fillPercent>0</fillPercent>
+		<coversFloor>false</coversFloor>
+		<holdsRoof>false</holdsRoof>
+		<castEdgeShadows>false</castEdgeShadows>
+		<canOverlapZones>false</canOverlapZones>
+		<statBases>
+			<MaxHitPoints>750</MaxHitPoints>
+			<Beauty>-10</Beauty>
+			<WorkToBuild>1000</WorkToBuild>
+		</statBases>
+		<pathCostIgnoreRepeat>true</pathCostIgnoreRepeat>
+		<building>
+			<allowAutoroof>false</allowAutoroof>
+			<ai_chillDestination>false</ai_chillDestination>
+			<expandHomeArea>false</expandHomeArea>
+			<isInert>true</isInert>
+			<blueprintGraphicData>
+				<texPath>FT_Ditch_Blueprint</texPath>
+			</blueprintGraphicData>
+		</building>
+		<drawStyleCategory>Walls</drawStyleCategory>
+		<filthLeaving>Filth_RubbleBuilding</filthLeaving>
+		<rotatable>false</rotatable>
+		<selectable>true</selectable>
+		<neverMultiSelect>true</neverMultiSelect>
+		<terrainAffordanceNeeded>Diggable</terrainAffordanceNeeded>
+		<designationCategory>Security</designationCategory>
+		<staticSunShadowHeight>0</staticSunShadowHeight>
+		<constructEffect>ConstructDirt</constructEffect>
+		<repairEffect>ConstructDirt</repairEffect>
+	</ThingDef>
+
+	<ThingDef ParentName="DoorBase">
+		<defName>FT_PalisadeGate</defName>
+		<label>palisade gate</label>
+		<description>A fortified external gate designed to accompany palisade walls. More durable than standard doors, but takes more time to build. This large, heavy door requires adjacent walls to function.</description>
+		<thingClass>Building_MultiTileDoor</thingClass>
+		<statBases>
+			<WorkToBuild>15000</WorkToBuild>
+			<MaxHitPoints>250</MaxHitPoints>
+			<Beauty>30</Beauty>
+		</statBases>
+		<graphicData>
+			<texPath>FT_PalisadeDoubleDoor_Mover</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+			<shaderType>CutoutComplex</shaderType>
+			<damageData>
+				<enabled>false</enabled>
+			</damageData>
+			<shadowData>
+				<volume>(1,1,1)</volume>
+				<offset>(0,0,0)</offset>
+			</shadowData>
+		</graphicData>
+		<uiIconPath>FT_Palisade_FrameDouble_icon</uiIconPath>
+		<useBlueprintGraphicAsGhost>true</useBlueprintGraphicAsGhost>
+		<size>(2,1)</size>
+		<rotatable>true</rotatable>
+		<constructionSkillPrerequisite>5</constructionSkillPrerequisite>
+		<costStuffCount>75</costStuffCount>
+		<building>
+			<blueprintClass>Blueprint_Build</blueprintClass>
+			<blueprintGraphicData>
+				<texPath>FT_Palisade_FrameDouble_icon</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<shaderType>EdgeDetect</shaderType>
+				<drawSize>3</drawSize>
+			</blueprintGraphicData>
+			<doorTopGraphic>
+				<texPath>FT_Palisade_FrameDoubleTop</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>3</drawSize>
+			</doorTopGraphic>
+			<doorSupportGraphic>
+				<texPath>FT_Palisade_FrameDouble</texPath>
+				<graphicClass>Graphic_Multi</graphicClass>
+				<drawSize>3</drawSize>
+			</doorSupportGraphic>
+		</building>
+		<researchPrerequisites>
+			<li>ComplexFurniture</li>
+		</researchPrerequisites>
+		<placeWorkers>
+			<li>PlaceWorker_MultiCellDoor</li>
+		</placeWorkers>
+		<staticSunShadowHeight>0</staticSunShadowHeight>
+	</ThingDef>
+</Defs>	

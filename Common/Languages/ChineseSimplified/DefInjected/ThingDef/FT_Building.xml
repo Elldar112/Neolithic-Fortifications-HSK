@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Palisade -->
+
+  <FT_Palisade.label>寨墙</FT_Palisade.label>
+  <FT_Palisade.description>一种简单的木质工事用来作为外围防御野兽的外墙以及建立城寨,相对墙壁坚固但是需要一点时间建造.</FT_Palisade.description>
+  <FT_Palisade_Blueprint.label>寨墙 (蓝图)</FT_Palisade_Blueprint.label>
+
+  <FT_Palisade_Frame.label>寨门框</FT_Palisade_Frame.label>
+  <FT_Palisade_Frame.description>没什么,就只是个门框而已.</FT_Palisade_Frame.description>
+  <FT_Palisade_Frame_Blueprint.label>寨门框(蓝图)</FT_Palisade_Frame_Blueprint.label>
+  <FT_Palisade_Frame_Frame.label>寨门框(建造中)</FT_Palisade_Frame_Frame.label>
+  <FT_Palisade_Frame_Frame.description>没什么,就只是个门框而已.</FT_Palisade_Frame_Frame.description>
+
+  <FT_Palisade_Frame_B.label>寨门框(1x2)</FT_Palisade_Frame_B.label>
+  <FT_Palisade_Frame_B.description>比较的大门框...不对不对,是比较大的门框.</FT_Palisade_Frame_B.description>
+  <FT_Palisade_Frame_B_Blueprint.label>寨门框(1x2) (蓝图)</FT_Palisade_Frame_B_Blueprint.label>
+  <FT_Palisade_Frame_B_Frame.label>寨门框(1x2) (建造中)</FT_Palisade_Frame_B_Frame.label>
+  <FT_Palisade_Frame_B_Frame.description>比较的大门框...不对不对,是比较大的门框.</FT_Palisade_Frame_B_Frame.description>
+
+  <FT_Palisade_Corner.label>斜角寨墙</FT_Palisade_Corner.label>
+  <FT_Palisade_Corner.description>一种简单的木质工事用来作为外围防御野兽的外墙以及建立城寨,相对墙壁坚固但是需要一点时间建造.</FT_Palisade_Corner.description>
+  <FT_Palisade_Corner_Blueprint.label>斜角寨墙 (蓝图)</FT_Palisade_Corner_Blueprint.label>
+  <FT_Palisade_Corner_Frame.label>斜角寨墙 (建造中)</FT_Palisade_Corner_Frame.label>
+  <FT_Palisade_Corner_Frame.description>一种简单的木质工事用来作为外围防御野兽的外墙以及建立城寨,相对墙壁坚固但是需要一点时间建造.</FT_Palisade_Corner_Frame.description>
+
+  <FT_Palisade_Embrasures.label>铳眼寨墙</FT_Palisade_Embrasures.label>
+  <FT_Palisade_Embrasures.description>一种简单的木质工事用来作为外围防御野兽的外墙以及建立城寨,相对墙壁坚固但是需要一点时间建造,上面有着可以开合的挡板来对外射击.</FT_Palisade_Embrasures.description>
+  <FT_Palisade_Embrasures_Blueprint.label>铳眼寨墙(蓝图)</FT_Palisade_Embrasures_Blueprint.label>
+  <FT_Palisade_Embrasures_Frame.label>铳眼寨墙(建造中)</FT_Palisade_Embrasures_Frame.label>
+  <FT_Palisade_Embrasures_Frame.description>一种简单的木质工事用来作为外围防御野兽的外墙以及建立城寨,相对墙壁坚固但是需要一点时间建造,上面有着可以开合的挡板来对外射击.</FT_Palisade_Embrasures_Frame.description>
+
+  <FT_CavalrySpike.label>木拒马</FT_CavalrySpike.label>
+  <FT_CavalrySpike.description>一种简单的野地防御工事用来避免车队在休息时被突然袭击,能够刺伤那些试图穿过它的人.</FT_CavalrySpike.description>
+  <FT_CavalrySpike_Blueprint.label>木拒马(蓝图)</FT_CavalrySpike_Blueprint.label>
+  <FT_CavalrySpike_Frame.label>木拒马(建造中)</FT_CavalrySpike_Frame.label>
+  <FT_CavalrySpike_Frame.description>一种简单的野地防御工事用来避免车队在休息时被突然袭击,能够刺伤那些试图穿过它的人.</FT_CavalrySpike_Frame.description>
+
+  <FT_Ditch.label>沟渠</FT_Ditch.label>
+  <FT_Ditch.description>一个简单的深沟，让敌人必须花费一番功夫才能跨越,因为没有额外加固的关系可能会被炸塌.</FT_Ditch.description>
+  <FT_Ditch_Blueprint.label>沟渠 (蓝图)</FT_Ditch_Blueprint.label>
+  <FT_Ditch_Frame.label>沟渠 (建造中)</FT_Ditch_Frame.label>
+  <FT_Ditch_Frame.description>一个简单的深沟，让敌人必须花费一番功夫才能跨越,因为没有额外加固的关系可能会被炸塌.</FT_Ditch_Frame.description>
+
+
+  <!-- Palisade Gate -->
+
+  <FT_PalisadeDoor.label>寨门</FT_PalisadeDoor.label>
+  <FT_PalisadeDoor.description>较为坚固的外门.</FT_PalisadeDoor.description>
+
+
+</LanguageData>
