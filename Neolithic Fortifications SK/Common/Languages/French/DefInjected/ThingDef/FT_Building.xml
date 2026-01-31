@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+  <!-- Palisade -->
+
+  <FT_Palisade.label>Palissade</FT_Palisade.label>
+  <FT_Palisade.description>Une simple fortification en bois sert de mur extérieur pour se défendre contre les bêtes sauvages et pour construire une ville fortifiée. Elle est relativement solide mais prend un peu de temps à construire.</FT_Palisade.description>
+  <FT_Palisade_Blueprint.label>Palissade (plan)</FT_Palisade_Blueprint.label>
+
+  <FT_Palisade_Frame.label>Palissade (cadre)</FT_Palisade_Frame.label>
+  <FT_Palisade_Frame.description>Ce n'est rien, c'est juste un cadre de porte.</FT_Palisade_Frame.description>
+  <FT_Palisade_Frame_Blueprint.label>Palissade (cadre) (plan)</FT_Palisade_Frame_Blueprint.label>
+
+  <FT_Palisade_Frame_B.label>Palissade (cadre) (1x2)</FT_Palisade_Frame_B.label>
+  <FT_Palisade_Frame_B.description>Le cadre de porte comparatif ... C'est vrai, c'est un cadre de porte plus grand.</FT_Palisade_Frame_B.description>
+  <FT_Palisade_Frame_B_Blueprint.label>Palissade (cadre) (1x2) (蓝图)</FT_Palisade_Frame_B_Blueprint.label>
+
+  <FT_Palisade_Corner.label>Palissade (coin)</FT_Palisade_Corner.label>
+  <FT_Palisade_Corner.description>Une simple fortification en bois sert de mur extérieur pour se défendre contre les bêtes sauvages et pour construire une ville fortifiée. Elle est relativement solide mais prend un peu de temps à construire.</FT_Palisade_Corner.description>
+  <FT_Palisade_Corner_Blueprint.label>Palissade (coin)(plan)</FT_Palisade_Corner_Blueprint.label>
+ 
+  <FT_Palisade_Embrasures.label>Palissade (embrasure)</FT_Palisade_Embrasures.label>
+  <FT_Palisade_Embrasures.description>Une simple fortification en bois est utilisée comme mur extérieur pour se défendre contre les bêtes sauvages et pour construire une ville fortifiée. Elle est relativement solide mais prend un peu de temps à construire. Elle possède un déflecteur qui peut être ouvert et fermé pour tirer à l'extérieur..</FT_Palisade_Embrasures.description>
+  <FT_Palisade_Embrasures_Blueprint.label>Palissade (embrasure) (plan)</FT_Palisade_Embrasures_Blueprint.label>
+  <FT_Palisade_Embrasures_Frame.label>Palissade (embrasure)</FT_Palisade_Embrasures_Frame.label>
+  <FT_Palisade_Embrasures_Frame.description>Une simple fortification en bois est utilisée comme mur extérieur pour se défendre contre les bêtes sauvages et pour construire une ville fortifiée. Elle est relativement solide mais prend un peu de temps à construire, elle possède un déflecteur qui peut être ouvert et fermé pour tirer à l'extérieur.</FT_Palisade_Embrasures_Frame.description>
+
+  <FT_CavalrySpike.label>Pointe de cavalerie</FT_CavalrySpike.label>
+  <FT_CavalrySpike.description>Une simple fortification sur le terrain est utilisée pour empêcher le convoi d'être soudainement attaqué au repos, et peut poignarder ceux qui tentent de le traverser.</FT_CavalrySpike.description>
+  <FT_CavalrySpike_Blueprint.label>Pointe de cavalerie (plan)</FT_CavalrySpike_Blueprint.label>
+  <FT_CavalrySpike_Frame.label>Pointe de cavalerie</FT_CavalrySpike_Frame.label>
+  <FT_CavalrySpike_Frame.description>Une simple fortification sur le terrain est utilisée pour empêcher le convoi d'être soudainement attaqué au repos, et peut poignarder ceux qui tentent de le traverser.</FT_CavalrySpike_Frame.description>
+
+  <FT_Ditch.label>Fossé</FT_Ditch.label>
+  <FT_Ditch.description>Un simple fossé profond, l'ennemi doit consacrer beaucoup d'efforts à traverser, peut s'effondrer si trop de dommages.</FT_Ditch.description>
+  <FT_Ditch_Blueprint.label>Fossé (plan)</FT_Ditch_Blueprint.label>
+  <FT_Ditch_Frame.label>Fossé</FT_Ditch_Frame.label>
+  <FT_Ditch_Frame.description>Un simple fossé profond, l'ennemi doit consacrer beaucoup d'efforts à traverser, peut s'effondrer si trop de dommages.</FT_Ditch_Frame.description>
+
+
+  <!-- Palisade Gate -->
+
+  <FT_PalisadeDoor.label>Porte de palissade</FT_PalisadeDoor.label>
+  <FT_PalisadeDoor.description>Une porte de palissade.</FT_PalisadeDoor.description>
+
+
+</LanguageData>
