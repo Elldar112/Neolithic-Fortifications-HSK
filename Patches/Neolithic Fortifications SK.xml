@@ -128,7 +128,7 @@
 	</value>
   </Operation>
   
-  <Operation Class="PatchOperatioAdd" MayRequire="Aoba.Fortress.Neolithic">
+  <Operation Class="PatchOperationAdd" MayRequire="Aoba.Fortress.Neolithic">
     <xpath>Defs/ThingDef[defName="FT_PalisadeDoor" or defName="FT_PalisadeGate"]</xpath>
 	<value>
 		<stuffCategories>
@@ -151,4 +151,5 @@
 	</value>
   </Operation>
   
+
 </Patch>
