@@ -157,7 +157,14 @@
 		<MaxHitPoints>300</MaxHitPoints>
 	</value>
   </Operation>
-  
+
+  <Operation Class="PatchOperationReplace" MayRequire="Aoba.Fortress.Neolithic">
+    <xpath>Defs/ThingDef[defName="FT_PalisadeGate"]/statBases/MaxHitPoints</xpath>
+	<value>
+		<MaxHitPoints>550</MaxHitPoints>
+	</value>
+  </Operation>
 
 </Patch>
+
 
