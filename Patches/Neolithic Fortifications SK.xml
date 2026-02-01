@@ -77,6 +77,13 @@
 		<li>FT_PalisadeGate</li>
     </value>
   </Operation>
+
+  <Operation Class="PatchOperationReplace" MayRequire="Aoba.Fortress.Neolithic">
+	<xpath>Defs/ThingDef[defName="FT_PalisadeGate"]/graphicData/texPath</xpath>
+	<value>
+		<texPath>FT_PalisadeDoubleDoor_Mover</texPath>
+	</value>
+  </Operation>
    
   <Operation Class="PatchOperationReplace" MayRequire="Aoba.Fortress.Neolithic">
     <xpath>Defs/ThingDef[defName="FT_Palisade" or defName="FT_Palisade_Corner"]/costStuffCount</xpath>
@@ -153,3 +160,4 @@
   
 
 </Patch>
+
