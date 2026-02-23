@@ -5,7 +5,7 @@
 Changes: ⁨
 - Material/Research conversion
 - Architect Sense Support
-- Reduced HP of pallisade structures so they are weaker than stone walls
+- Rebalanced HP of palisades
 - Integration with Vile's Pre-Industrial if it's active.
 ⁩⁩⁩
 Original Mod (By AOBA): https://steamcommunity.com/sharedfiles/filedetails/?id=2385960678
