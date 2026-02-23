@@ -22,8 +22,6 @@
 					<li>FT_Palisade</li>
 					<li>FT_Palisade_Embrasures</li>
 					<li>FT_Palisade_Corner</li>
-					<li>FT_PalisadeGate</li>
-					<li>FT_PalisadeDoor</li>
 					<li>FT_CavalrySpike</li>
 					<li>FT_Ditch</li>
 				</defNames>
@@ -33,7 +31,7 @@
 	</value>
   </Operation>
   
-  <Operation Class="PatchOperationAdd" MayRequire="Aoba.Fortress.Neolithic,ViTech.MedievalOverhaul">
+  <Operation Class="PatchOperationAdd" MayRequire="Aoba.Fortress.Neolithic,ViTech.MedievalOverhaul"> <!-- Requires Vile Pre-Industrial-->
 	<xpath>Defs</xpath>
 	<value>
 		<ArchitectSense.DesignationSubCategoryDef>
@@ -42,14 +40,22 @@
 			<description>Simple medieval defenses</description>
 			<order>1</order>
 				<defNames>
-					<li MayRequire="ViTech.MedievalOverhaul">Pavise</li> <!-- Requires Vile Pre-Industrial-->
-					<li MayRequire="ViTech.MedievalOverhaul">Valli</li> <!-- Requires Vile Pre-Industrial-->
-					<li MayRequire="ViTech.MedievalOverhaul">StakeWall</li> <!-- Requires Vile Pre-Industrial-->
-					<li MayRequire="ViTech.MedievalOverhaul">chevalDeFrise</li> <!-- Requires Vile Pre-Industrial-->
+					<li>Pavise</li>
+					<li>Valli</li>
+					<li>StakeWall</li>
+					<li>chevalDeFrise</li>
 				</defNames>
 			<designationCategory>Security</designationCategory>
 			<debug>false</debug>
 		</ArchitectSense.DesignationSubCategoryDef>
+	</value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd" MayRequire="Aoba.Fortress.Neolithic">
+	<xpath>Defs/ArchitectSense.DesignationSubCategoryDef[defname="SubCategory_Doors"]/defNames</xpath>
+	<value>
+		<li>FT_PalisadeDoor</li>
+		<li>FT_PalisadeGate</li>
 	</value>
   </Operation>
   
@@ -190,7 +196,12 @@
 		<texPath>FT_PalisadeDoubleDoor_Mover</texPath>
 	</value>
   </Operation>
+  
+  <Operation Class="PatchOperationAdd" MayRequire="Aoba.Fortress.Neolithic">
+    <xpath>Defs/ThingDef[defName="FT_Palisade_Embrasures" or defName="FT_Palisade" or defName="FT_Palisade_Corner" or defName="FT_PalisadeDoor" or defName="FT_PalisadeGate"]/building</xpath>
+    <value>
+        <canPlaceOverWall>true</canPlaceOverWall>
+    </value>
+  </Operation>
 
 </Patch>
-
-
