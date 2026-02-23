@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+ <?xml version="1.0" encoding="utf-8"?>
 <Patch>
 
   <Operation Class="PatchOperationFindMod">
@@ -6,19 +6,19 @@
 	  <li>Fortifications - Neolithic</li>
       <li>Fortifications - Neolithic HSK</li>
     </mods>
-
-    <success>
-
-      <li Class="PatchOperationSequence">
+	
+    <match Class="PatchOperationSequence">
         <operations>
 
+	<!-- Architect Sense -->
+	
           <li Class="PatchOperationReplace">
             <xpath>Defs/ThingDef[@Name="FT_Palisade_Base"]/designationCategory</xpath>
             <value>
               <designationCategory>Security</designationCategory>
             </value>
           </li>
-
+		  
           <li Class="PatchOperationAdd">
             <xpath>Defs</xpath>
             <value>
@@ -26,17 +26,26 @@
                 <defName>SubCategory_FortressNeolithic</defName>
                 <label>Neolithic Fortifications</label>
                 <description>Primitive defenses</description>
-                <order>1</order>
                 <defNames>
                   <li>FT_Palisade</li>
                   <li>FT_Palisade_Embrasures</li>
                   <li>FT_Palisade_Corner</li>
                   <li>FT_CavalrySpike</li>
                   <li>FT_Ditch</li>
-                  <li MayRequire="ViTech.MedievalOverhaul">Pavise</li>
-                  <li MayRequire="ViTech.MedievalOverhaul">Valli</li>
-                  <li MayRequire="ViTech.MedievalOverhaul">StakeWall</li>
-                  <li MayRequire="ViTech.MedievalOverhaul">chevalDeFrise</li>
+                </defNames>
+                <designationCategory>Security</designationCategory>
+                <debug>false</debug>
+              </ArchitectSense.DesignationSubCategoryDef>
+
+			  <ArchitectSense.DesignationSubCategoryDef MayRequire="ViTech.MedievalOverhaul">  <!-- Requires Vile's Pre-Industrial -->
+                <defName>SubCategory_FortressMedievalVile</defName>
+                <label>Simple Fortifications</label>
+                <description>Simple medieval defenses</description>
+                <defNames>
+				  <li>Pavise</li>
+                  <li>Valli</li>
+                  <li>StakeWall</li>
+                  <li>chevalDeFrise</li>
                 </defNames>
                 <designationCategory>Security</designationCategory>
                 <debug>false</debug>
@@ -56,6 +65,8 @@
             <xpath>Defs/ArchitectSense.DesignationSubCategoryDef[defName="SubCategory_Fortifications"]/defNames/li[1]</xpath>
           </li>
 
+	<!-- Research -->
+	
           <li Class="PatchOperationAdd">
             <xpath>Defs/ThingDef[defName="FT_Palisade" or defName="FT_Palisade_Embrasures" or defName="FT_Palisade_Corner" or defName="FT_PalisadeDoor" or defName="FT_CavalrySpike" or defName="FT_Ditch"]</xpath>
             <value>
@@ -74,7 +85,101 @@
             </value>
           </li>
 
-          <li Class="PatchOperationAdd">
+	<!-- Cost -->
+	
+          <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="FT_Palisade_Embrasures"]/costStuffCount</xpath>
+            <value>
+              <costStuffCount>4</costStuffCount>
+            </value>
+          </li>
+		  
+		  <li Class="PatchOperationReplace">
+            <xpath>Defs/ThingDef[defName="FT_Palisade" or defName="FT_Palisade_Corner"]/costStuffCount</xpath>
+            <value>
+              <costStuffCount>2</costStuffCount>
+            </value>
+          </li>
+		  
+		  <li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="FT_Palisade" or defName="FT_Palisade_Embrasures" or defName="FT_Palisade_Corner"]</xpath>
+			<value>
+				<costList>
+					<WoodLog>4</WoodLog>
+				</costList>
+			</value>
+		  </li>
+			  
+		  <li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="FT_Palisade_Embrasures" or defName="FT_Palisade_Corner"]</xpath>
+			<value>
+				<costList>
+					<ComponentMedieval>1</ComponentMedieval>
+				</costList>
+			</value>
+		  </li>
+			  
+		  <li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="FT_Palisade_Embrasures" or defName="FT_PalisadeDoor" or defName="FT_PalisadeGate"]</xpath>
+			<value>
+				<costList>
+					<ComponentMedieval>2</ComponentMedieval>
+				</costList>
+			</value>
+		  </li>
+			  
+		  <li Class="PatchOperationReplace" MayRequire="ViTech.MedievalOverhaul"> <!-- Requires Vile Pre-Industrial-->
+			<xpath>Defs/ThingDef[defName="FT_CavalrySpike"]/costList</xpath>
+			<value>
+				<costList>
+					<Sudis>4</Sudis>
+				</costList>
+			</value>
+		  </li>
+		  
+		  <li Class="PatchOperationAdd">
+			<xpath>Defs/ThingDef[defName="FT_PalisadeDoor" or defName="FT_PalisadeGate"]</xpath>
+			<value>
+				<stuffCategories>
+					<li>Woody</li>
+				</stuffCategories>
+			</value>
+		  </li>
+  
+		  <li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="FT_Ditch"]/statBases/WorkToBuild</xpath>
+			<value>
+				<WorkToBuild>2600</WorkToBuild>
+			</value>
+		  </li>
+		  
+	<!-- Stats -->
+	
+		  <li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="FT_Palisade" or defName="FT_Palisade_Embrasures" or defName="FT_Palisade_Corner"]/statBases/MaxHitPoints</xpath>
+			<value>
+				<MaxHitPoints>300</MaxHitPoints>
+			</value>
+		  </li>
+
+		  <li Class="PatchOperationReplace">
+			<xpath>Defs/ThingDef[defName="FT_PalisadeGate"]/statBases/MaxHitPoints</xpath>
+			<value>
+				<MaxHitPoints>550</MaxHitPoints>
+			</value>
+		  </li>
+		 
+	<!-- Attributes -->
+	
+		  <li Class="PatchOperationAdd">
+            <xpath>Defs/ThingDef[defName="FT_Palisade_Embrasures" or defName="FT_Palisade" or defName="FT_Palisade_Corner" or defName="FT_PalisadeDoor" or defName="FT_PalisadeGate"]/building</xpath>
+            <value>
+              <canPlaceOverWall>true</canPlaceOverWall>
+            </value>
+          </li>
+		  
+	
+		   <li Class="PatchOperationAdd">
             <xpath>Defs/ThingDef[@Name="FT_Palisade_Base"]/building</xpath>
             <value>
               <paintable>true</paintable>
@@ -96,32 +201,9 @@
             </value>
           </li>
 
-          <li Class="PatchOperationReplace">
-            <xpath>Defs/ThingDef[defName="FT_Palisade" or defName="FT_Palisade_Corner"]/costStuffCount</xpath>
-            <value>
-              <costStuffCount>2</costStuffCount>
-            </value>
-          </li>
-
-          <li Class="PatchOperationReplace">
-            <xpath>Defs/ThingDef[defName="FT_Palisade_Embrasures"]/costStuffCount</xpath>
-            <value>
-              <costStuffCount>4</costStuffCount>
-            </value>
-          </li>
-
-          <li Class="PatchOperationAdd">
-            <xpath>Defs/ThingDef[defName="FT_Palisade_Embrasures" or defName="FT_Palisade" or defName="FT_Palisade_Corner" or defName="FT_PalisadeDoor" or defName="FT_PalisadeGate"]/building</xpath>
-            <value>
-              <canPlaceOverWall>true</canPlaceOverWall>
-            </value>
-          </li>
-
         </operations>
-      </li>
-
-    </success>
+	</match>
   </Operation>
+ 
 
 </Patch>
-
