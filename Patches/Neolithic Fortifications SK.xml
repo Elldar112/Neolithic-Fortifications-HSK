@@ -52,7 +52,7 @@
   </Operation>
   
   <Operation Class="PatchOperationAdd" MayRequire="Aoba.Fortress.Neolithic">
-	<xpath>Defs/ArchitectSense.DesignationSubCategoryDef[defname="SubCategory_Doors"]/defNames</xpath>
+	<xpath>Defs/ArchitectSense.DesignationSubCategoryDef[defName="SubCategory_Doors"]/defNames</xpath>
 	<value>
 		<li>FT_PalisadeDoor</li>
 		<li>FT_PalisadeGate</li>
@@ -142,9 +142,18 @@
   </Operation>
   
   <Operation Class="PatchOperationAdd" MayRequire="Aoba.Fortress.Neolithic">
-    <xpath>Defs/ThingDef[defName="FT_PalisadeDoor" or defName="FT_PalisadeGate"]</xpath>
+    <xpath>Defs/ThingDef[defName="FT_PalisadeGate"]</xpath>
 	<value>
-		<stuffCategories>
+		<stuffCategories Inherit="False">
+			<li>Woody</li>
+		</stuffCategories>
+	</value>
+  </Operation>
+  
+  <Operation Class="PatchOperationReplace" MayRequire="Aoba.Fortress.Neolithic">
+    <xpath>Defs/ThingDef[defName="FT_PalisadeDoor"]/stuffCategories</xpath>
+	<value>
+		<stuffCategories Inherit="False">
 			<li>Woody</li>
 		</stuffCategories>
 	</value>
@@ -201,6 +210,13 @@
     <xpath>Defs/ThingDef[defName="FT_Palisade_Embrasures" or defName="FT_Palisade" or defName="FT_Palisade_Corner" or defName="FT_PalisadeDoor" or defName="FT_PalisadeGate"]/building</xpath>
     <value>
         <canPlaceOverWall>true</canPlaceOverWall>
+    </value>
+  </Operation>
+  
+  <Operation Class="PatchOperationAdd" MayRequire="Aoba.Fortress.Neolithic">
+    <xpath>Defs/ThingDef[defName="FT_Palisade"]/building</xpath>
+    <value>
+        <isPlaceOverableWall>true</isPlaceOverableWall>
     </value>
   </Operation>
 
